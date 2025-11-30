@@ -227,17 +227,18 @@ document.getElementById('play-toggle').addEventListener('click', function () {
     const playToggle = document.getElementById('play-toggle');
 
     if (isPlaying) {
-        // Fade out then pause
-        playToggle.textContent = '▶'; // Immediate feedback
+        // Pause instantly
+        playToggle.textContent = '▶';
         isPlaying = false;
-        fadeOut(() => {
-            player.pauseVideo();
-        });
+        clearInterval(fadeInterval); // Stop any active fade
+        player.pauseVideo();
     } else {
-        // Fade in
-        playToggle.textContent = '■'; // Immediate feedback
+        // Play instantly
+        playToggle.textContent = '■';
         isPlaying = true;
-        fadeIn();
+        clearInterval(fadeInterval); // Stop any active fade
+        player.setVolume(document.getElementById('volume-slider').value); // Ensure volume is set
+        player.playVideo();
     }
 });
 
