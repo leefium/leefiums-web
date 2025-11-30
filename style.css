@@ -63,18 +63,63 @@ h1 {
     color: #AB856C;
     font-size: 1.5rem;
     margin-top: 0;
+    margin-top: 0;
+}
+
+.content-row {
+    display: grid;
+    grid-template-columns: 1fr 50vw 1fr;
+    align-items: start;
+    gap: 20px;
+    width: 100vw;
+    margin-top: 30px;
+    padding: 0 20px;
+    /* Add padding to prevent edge touching */
+    box-sizing: border-box;
+}
+
+.about-box {
+    grid-column: 1;
+    border: 4px solid #AB856C;
+    padding: 10px;
+    background-color: #FFFAFA;
+    font-family: 'Silkscreen', cursive;
+    color: #AB856C;
+    width: auto;
+    /* Fill the column */
+    box-sizing: border-box;
+    text-align: left;
+    border-radius: 15px;
+    min-height: 140px;
+    /* Match music player min-height */
+    height: 100%;
+    /* Stretch to match height if needed */
+}
+
+.about-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.about-box p {
+    margin: 5px 0;
+    font-size: 0.9rem;
 }
 
 .music-player {
+    grid-column: 2;
     border: 4px solid #AB856C;
     padding: 10px;
     /* Reduced padding */
     background-color: #FFFAFA;
     display: inline-block;
-    margin-top: 30px;
+    /* margin-top: 30px; Removed margin-top as it's handled by content-row */
     font-family: 'Silkscreen', cursive;
     color: #AB856C;
-    width: 50vw;
+    width: 100%;
+    /* Fill the grid column (which is 50vw) */
     box-sizing: border-box;
     text-align: left;
     /* Align content to left */

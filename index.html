@@ -17,28 +17,36 @@
         <p class="welcome-text">Welcome to my website!</p>
     </div>
     <div class="main-container">
-        <div class="music-player">
-            <div class="player-content">
-                <img id="album-art" src="" alt="Album Art">
-                <div class="player-details">
-                    <div id="song-title">Loading...</div>
-                    <div id="channel-name"></div>
-                    <input type="range" id="progress-slider" min="0" max="100" value="0">
-                    <div class="controls-row">
-                        <div class="buttons">
-                            <button id="prev-btn">|&lt;</button>
-                            <button id="play-toggle">▶</button>
-                            <button id="next-btn">&gt;|</button>
+        <div class="content-row">
+            <div class="about-box">
+                <h3>About Me</h3>
+                <p>Name:</p>
+                <p>Age:</p>
+                <p>Nationality:</p>
+            </div>
+            <div class="music-player">
+                <div class="player-content">
+                    <img id="album-art" src="" alt="Album Art">
+                    <div class="player-details">
+                        <div id="song-title">Loading...</div>
+                        <div id="channel-name"></div>
+                        <input type="range" id="progress-slider" min="0" max="100" value="0">
+                        <div class="controls-row">
+                            <div class="buttons">
+                                <button id="prev-btn">|&lt;</button>
+                                <button id="play-toggle">▶</button>
+                                <button id="next-btn">&gt;|</button>
+                            </div>
+                            <div class="volume-control">
+                                <label for="volume-slider">Vol:</label>
+                                <input type="range" id="volume-slider" min="0" max="100" value="50">
+                            </div>
+                            <div class="time-display" id="time-display">00:00 / 00:00</div>
                         </div>
-                        <div class="volume-control">
-                            <label for="volume-slider">Vol:</label>
-                            <input type="range" id="volume-slider" min="0" max="100" value="50">
-                        </div>
-                        <div class="time-display" id="time-display">00:00 / 00:00</div>
                     </div>
                 </div>
+                <div id="youtube-player"></div>
             </div>
-            <div id="youtube-player"></div>
         </div>
     </div>
 
