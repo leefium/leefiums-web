@@ -1,0 +1,292 @@
+:root {
+    --bg-color: #FFFAFA;
+    --text-color: #FFD3AB;
+    --font-main: 'ZCOOL KuaiLe', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #FFFAFA;
+    /* Off-white base */
+    background-image:
+        radial-gradient(#FAD9E1 15%, transparent 16%),
+        radial-gradient(#FAD9E1 15%, transparent 16%),
+        radial-gradient(#FAE6C8 15%, transparent 16%),
+        radial-gradient(#F5D9C4 15%, transparent 16%);
+    /* Pink, Pink, Beige, New Color */
+    background-size: 38px 38px;
+    /* Reduced size (~7px smaller dots) */
+    background-position:
+        0 0,
+        19px 19px,
+        19px 0,
+        0 19px;
+    /* Adjusted positions */
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+}
+
+.title-panel {
+    width: 100%;
+    background: linear-gradient(to bottom,
+            #D9B79E 0%, #D9B79E 33.33%,
+            #FAE6C8 33.33%, #FAE6C8 66.66%,
+            #FAD9E1 66.66%, #FAD9E1 100%);
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 0;
+}
+
+.main-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    color: #AB856C;
+    text-decoration: underline;
+}
+
+.welcome-text {
+    font-family: 'Silkscreen', cursive;
+    color: #AB856C;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.music-player {
+    border: 4px solid #AB856C;
+    padding: 10px;
+    /* Reduced padding */
+    background-color: #FFFAFA;
+    display: inline-block;
+    margin-top: 30px;
+    font-family: 'Silkscreen', cursive;
+    color: #AB856C;
+    width: 33vw;
+    box-sizing: border-box;
+    text-align: left;
+    /* Align content to left */
+    border-radius: 15px;
+    /* Slightly rounded corners */
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Reduced gap */
+    margin-top: 5px;
+    /* Reduced margin */
+}
+
+.buttons {
+    display: flex;
+    gap: 2px;
+    /* Reduced gap */
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    /* Remove border */
+    color: #AB856C;
+    font-family: 'Silkscreen', cursive;
+    font-size: 1.2rem;
+    /* Reduced font size */
+    padding: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    width: 35px;
+    /* Reduced width */
+    height: 35px;
+    /* Reduced height */
+    line-height: 35px;
+    /* Center text vertically */
+    text-align: center;
+}
+
+#play-toggle {
+    font-size: 1.5rem;
+    /* Adjusted icon size */
+}
+
+.buttons button:hover {
+    background-color: #FAD9E1;
+}
+
+.player-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Reduced gap */
+}
+
+#album-art {
+    width: 80px;
+    /* Reduced size */
+    height: 80px;
+    /* Reduced size */
+    border-radius: 0;
+    /* Square profile picture */
+    object-fit: cover;
+    border: 2px solid #AB856C;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    image-rendering: pixelated;
+    /* Pixelated style */
+}
+
+.player-details {
+    flex-grow: 1;
+    width: 100%;
+    min-width: 0;
+    /* Allow flex item to shrink below content size */
+}
+
+#song-title {
+    font-family: 'Silkscreen', cursive;
+    color: #AB856C;
+    margin-bottom: 2px;
+    /* Reduced margin */
+    text-align: left;
+    /* Left align */
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    /* Remove padding */
+}
+
+#channel-name {
+    font-family: 'Silkscreen', cursive;
+    color: #AB856C;
+    font-size: 0.8rem;
+    text-align: left;
+    /* Left align */
+    margin-bottom: 5px;
+    /* Reduced margin */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    /* Remove padding */
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Reduced gap */
+    margin-top: 0;
+    /* Remove top margin as it's in flex row */
+    flex-grow: 1;
+    /* Take up remaining space */
+}
+
+#volume-slider {
+    width: 100%;
+    /* Fill the flex item */
+    height: 10px;
+    background-color: #FAD9E1;
+    border: none;
+    /* Remove border */
+    appearance: none;
+    outline: none;
+    margin: 0;
+    /* No margin needed in flex */
+}
+
+#volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    /* Increased for heart */
+    height: 20px;
+    /* Increased for heart */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23AB856C"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: none;
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23AB856C"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: none;
+}
+
+.time-display {
+    font-family: 'Silkscreen', cursive;
+    color: #AB856C;
+    font-size: 0.8rem;
+    /* Reduced font size */
+    white-space: nowrap;
+}
+
+input[type=range] {
+    accent-color: #AB856C;
+}
+
+#progress-slider {
+    width: 100%;
+    height: 10px;
+    background-color: #FAD9E1;
+    border: none;
+    /* Remove border */
+    margin-top: 5px;
+    /* Reduced margin */
+    margin-bottom: 5px;
+    appearance: none;
+    /* Remove default styling */
+    outline: none;
+}
+
+#progress-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    /* Increased for heart */
+    height: 20px;
+    /* Increased for heart */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23AB856C"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#progress-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23AB856C"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    border: none;
+}
+
+#youtube-player {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+}
